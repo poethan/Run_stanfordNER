@@ -28,7 +28,7 @@
 
 $replace = '/Users/lifenghan/Desktop/_stanford-ner-2018-10-16';
 
-opendir (DIR, "$replace/tag_test") || die "can not open output file!"; ## put the address of system output translation documents here
+opendir (DIR, "$replace/tag") || die "can not open output file!"; ## put the address of system output translation documents here
 @filename=readdir(DIR);
 closedir (DIR);
 
@@ -36,7 +36,7 @@ foreach $file (@filename)
 	{
 		if(!(-d "$replace/tag_test/$file"))
 			{
-				open (TEST,"<:encoding(utf8)","$replace/tag_test/$file") || die "can not open file: $!";  
+				open (TEST,"<:encoding(utf8)","$replace/tag/$file") || die "can not open file: $!";  
 				open (RESULT,">:encoding(utf8)","$replace/NE_tag/NE_$file.txt") || die "$!"; ## store the result
 
 				$str="";
