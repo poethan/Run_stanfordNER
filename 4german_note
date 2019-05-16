@@ -1,0 +1,26 @@
+unzip the german *.jar file and copy the classifier  'german.conll.germeval2014.hgc_175m_600.crf.ser.gz' out to the classifiers folder
+Lifengs-MacBook-Air:classifier-de lifenghan$ unzip stanford-german-corenlp-2018-10-05-models.jar
+
+try: below it worked:
+
+
+Lifengs-MacBook-Air:_stanford-ner-2018-10-16 lifenghan$ java -mx600m -cp stanford-ner.jar:lib/* edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz -textFile corpora-de/german-ner.txt > german-ner-tag.txt
+Invoked on Thu May 16 13:33:23 CEST 2019 with arguments: -loadClassifier classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz -textFile corpora-de/german-ner.txt
+loadClassifier=classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz
+textFile=corpora-de/german-ner.txt
+Loading classifier from classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz ... done [3.9 sec].
+CRFClassifier tagged 52 words in 2 documents at 319.02 words per second.
+Lifengs-MacBook-Air:_stanford-ner-2018-10-16 lifenghan$ 
+
+
+try another sample small corpus:
+Lifengs-MacBook-Air:_stanford-ner-2018-10-16 lifenghan$ java -mx600m -cp stanford-ner.jar:lib/* edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz -textFile corpora-de/corpus.tc.de.10000 > corpora-de/corpus.tc.de.10000_tag
+Invoked on Thu May 16 13:38:45 CEST 2019 with arguments: -loadClassifier classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz -textFile corpora-de/corpus.tc.de.10000
+loadClassifier=classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz
+textFile=corpora-de/corpus.tc.de.10000
+Loading classifier from classifiers/german.conll.germeval2014.hgc_175m_600.crf.ser.gz ... done [3.9 sec].
+Untokenizable:  (U+F0FF, decimal: 61695)
+CRFClassifier tagged 229129 words in 7296 documents at 14256.41 words per second.
+Lifengs-MacBook-Air:_stanford-ner-2018-10-16 lifenghan$ 
+
+look into one example - tagged 'misc' <<< Europäische/MISC Kommission/O -/O Upcoming/O events/O die/O Nachricht/O :/O die/O Anmeldung/O zur/O Veranstaltung/O kann/O vorgenommen/O werden/O ./O 
