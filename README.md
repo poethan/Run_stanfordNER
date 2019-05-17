@@ -1,7 +1,11 @@
 # Run_stanfordNER
-some small codes and documents about running Stanford_NER tagger 
+some small codes and documents about running Stanford_NER tagger (https://nlp.stanford.edu/software/CRF-NER.html)
 
-such as extract the tagged NEs.
+such as 
+
+Tagging the file/files.
+
+extract the tagged NEs from tagged file/files.
 
 build up parallel NEs.
 
